@@ -12,6 +12,7 @@ Font font;
 
 int main() {
     InitWindow(WIDTH, HEIGHT, "Anime List");
+    SetTargetFPS(30);
     Camera2D cam = {{WIDTH/2, HEIGHT/2}, {WIDTH/2, HEIGHT/2}, 0, 1};
     int codepoints[512] = { 0 };
     for (int i = 0; i < 95; i++) codepoints[i] = 32 + i;   // Basic ASCII characters
