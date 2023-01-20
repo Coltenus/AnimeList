@@ -14,7 +14,8 @@ namespace al {
             _size.y = 16;
         _fontH = _size.y / 2;
         _pos = {startPos.x, startPos.y + (_size.y + 15) * elementsCount};
-        _delButton = new Button("Delete", {_pos.x + _size.x/10*7, _pos.y}, {_size.x/10*3, _size.y}, 2, elementsCount);
+        _delButton = new Button("Delete", {_pos.x + _size.x/10*7, _pos.y}, {_size.x/10*3, _size.y},
+                                2, elementsCount, buttonTexture);
         _delButton->SetThickness(3);
         elementsCount++;
     }

@@ -15,11 +15,14 @@ namespace al {
         Vector2 _pos, _size;
         std::string _text;
         short _fontH, _opcode, _value, _thickness;
+        Texture2D buttonTexture;
+        bool isTextureExtern;
 
     public:
         Button(const char* text, Vector2 pos, Vector2 size, short opcode);
         Button(const char* text, Vector2 pos, Vector2 size, short opcode, short value);
-        ~Button() = default;
+        Button(const char* text, Vector2 pos, Vector2 size, short opcode, short value, Texture2D bTexture);
+        ~Button();
         void Draw();
         void Update(short& opcode);
         void Update(short& opcode, short& value);

@@ -9,6 +9,7 @@
 
 short al::ListItem::elementsCount = 0;
 Font font;
+Texture2D al::ListItem::buttonTexture;
 
 int main() {
     InitWindow(WIDTH, HEIGHT, "Anime List");
@@ -21,6 +22,11 @@ int main() {
     al::InputField input({50, 20}, {650, 50}, 30, u"Input name of anime (min char-4, max-30)");
     al::Button saveButton("Save", {750, 20}, {100, 50}, 1);
     al::Button upButton("Up", {WIDTH - 100, HEIGHT - 100}, {55, 50}, 3);
+    {
+        Image buf = LoadImage("res/button.png");
+        ImageResize(&buf, 210, 40);
+        al::ListItem::buttonTexture = LoadTextureFromImage(buf);
+    }
     std::vector<al::ListItem*> list;
     {
         std::string buf;
@@ -114,5 +120,6 @@ int main() {
     for(auto& el: list)
         delete el;
     UnloadFont(font);
+    UnloadTexture(al::ListItem::buttonTexture);
     CloseWindow();
 }

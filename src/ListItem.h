@@ -19,6 +19,7 @@ namespace al {
         Button* _delButton;
 
     public:
+        static Texture2D buttonTexture;
         static short elementsCount;
         ListItem(const char*, Vector2 startPos, Vector2 size);
         ~ListItem();
